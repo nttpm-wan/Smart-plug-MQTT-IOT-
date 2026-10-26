@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Smart Plug: Build Blynk MQTT",
+      "type": "process",
+      "command": "${env:USERPROFILE}/.platformio/penv/Scripts/platformio.exe",
+      "args": ["run", "-e", "blynk-mqtt"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Smart Plug: Build original Blynk protocol",
+      "type": "process",
+      "command": "${env:USERPROFILE}/.platformio/penv/Scripts/platformio.exe",
+      "args": ["run", "-e", "smart-plug"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "ESP32: Build board check",
+      "type": "process",
+      "command": "${env:USERPROFILE}/.platformio/penv/Scripts/platformio.exe",
+      "args": ["run", "-e", "esp32-check"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

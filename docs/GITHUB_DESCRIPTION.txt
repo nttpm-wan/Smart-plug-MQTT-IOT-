@@ -1,0 +1,1 @@
+ESP32 smart-plug prototype using Blynk over MQTT/TLS. Includes Serial relay simulation and fail-off on detected disconnection; hardware validation and energy metering are planned.
